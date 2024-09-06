@@ -1,4 +1,5 @@
 require("jaroNvim.remap")
+require("jaroNvim.commands")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -26,11 +27,3 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.opt.hlsearch = true
-
-vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = '',
-	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-	callback = function ()
-		vim.highlight.on_yank()
-	end,
-})
