@@ -21,16 +21,13 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		'tsserver',
+		'ts_ls',
 		'rust_analyzer',
 		'clangd',
 		'pyright'
 	},
 	handlers = {
 		function(server_name)
-			if server_name == "tsserver" then
-				server_name = "ts_ls"
-			end
 			require('lspconfig')[server_name].setup({
 				capabilities = lsp_capabilities,
 			})
