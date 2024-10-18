@@ -24,7 +24,8 @@ require('mason-lspconfig').setup({
 		'ts_ls',
 		'rust_analyzer',
 		'clangd',
-		'pyright'
+		'pyright',
+		'ast_grep'
 	},
 	handlers = {
 		function(server_name)
