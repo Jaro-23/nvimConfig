@@ -25,7 +25,8 @@ require('mason-lspconfig').setup({
 		'rust_analyzer',
 		'clangd',
 		'pyright',
-		'ast_grep'
+		'jdtls',
+		'kotlin_language_server'
 	},
 	handlers = {
 		function(server_name)
