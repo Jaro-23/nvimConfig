@@ -1,6 +1,10 @@
 require("jaroNvim.remap")
 require("jaroNvim.commands")
 
+vim.diagnostic.config({ virtual_lines = true})
+vim.diagnostic.config({ virtual_text = false})
+vim.wo.signcolumn = "yes"
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
