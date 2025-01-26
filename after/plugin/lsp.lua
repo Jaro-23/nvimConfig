@@ -26,8 +26,7 @@ require('mason-lspconfig').setup({
 		'clangd',
 		'pyright',
 		'jdtls',
-		'kotlin_language_server',
-		'omnisharp'
+		'kotlin_language_server'
 	},
 	handlers = {
 		function(server_name)
