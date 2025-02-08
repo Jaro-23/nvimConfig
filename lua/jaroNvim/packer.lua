@@ -31,8 +31,16 @@ return require('packer').startup(function(use)
 	}
 
 	use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	use( 'lervag/vimtex' )
+	use({ 
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+		ft = { "markdown" },
+	})
 	use( 'mbbill/undotree' )
 	use( 'tpope/vim-fugitive' )
+
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use( 'navarasu/onedark.nvim' )
 end)
