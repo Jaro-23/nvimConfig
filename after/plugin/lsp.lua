@@ -26,7 +26,8 @@ require('mason-lspconfig').setup({
 		'clangd',
 		'pyright',
 		'jdtls',
-		'kotlin_language_server'
+		'kotlin_language_server',
+		'omnisharp',
 	},
 	handlers = {
 		function(server_name)
@@ -50,12 +51,18 @@ require('mason-lspconfig').setup({
 								vim.env.VIMRUNTIME,
 							}
 						}
-					}
+						}
 				}
 			})
 		end,
 	}
 })
+
+require'lspconfig'.omnisharp.setup{
+    cmd = { "omnisharp" },  -- Use "omnisharp-mono" if using Mono
+    root_dir = require'lspconfig'.util.root_pattern("*.sln", ".git"),
+	enable_msbuild_load_projects_on_demand = true,
+}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

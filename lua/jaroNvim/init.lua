@@ -1,6 +1,10 @@
 require("jaroNvim.remap")
 require("jaroNvim.commands")
 
+vim.opt.wildignore:append({ "*.meta" })
+vim.g.netrw_list_hide = '.*\\.meta$'
+vim.g.netrw_hide = 1
+
 vim.diagnostic.config({ virtual_lines = true})
 vim.diagnostic.config({ virtual_text = false})
 vim.wo.signcolumn = "yes"

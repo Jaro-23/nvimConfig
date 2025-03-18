@@ -1,3 +1,10 @@
+require('telescope').setup {
+	defaults = {
+		file_ignore_patterns = { "%.log$", "%.tmp$", "%.bak$" }
+	}
+}
+
+
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
 	ensure_installed = { 
@@ -5,6 +12,7 @@ require'nvim-treesitter.configs'.setup {
 		"typescript",
 		"c", 
 		"cpp",
+		"c_sharp",
 		"lua", 
 		"vim", 
 		"vimdoc", 
@@ -21,5 +29,6 @@ require'nvim-treesitter.configs'.setup {
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
+		disable = { "meta" }
 	},
 }
