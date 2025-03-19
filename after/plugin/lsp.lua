@@ -28,6 +28,8 @@ require('mason-lspconfig').setup({
 		'jdtls',
 		'kotlin_language_server',
 		'omnisharp',
+		'r_language_server',
+		'lua_ls',
 	},
 	handlers = {
 		function(server_name)
@@ -51,18 +53,24 @@ require('mason-lspconfig').setup({
 								vim.env.VIMRUNTIME,
 							}
 						}
-						}
+					}
 				}
+			})
+		end,
+		omnisharp = function()
+			require('lspconfig').omnisharp.setup({
+				cmd = { "dotnet", "~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"},
+				root_dir = require'lspconfig'.util.root_pattern("*.sln", ".git"),
+				enable_msbuild_load_projects_on_demand = true,
+				settings = {
+					OmniSharp = {
+						UseGlobalMono = "never",
+					},
+				},
 			})
 		end,
 	}
 })
-
-require'lspconfig'.omnisharp.setup{
-    cmd = { "omnisharp" },  -- Use "omnisharp-mono" if using Mono
-    root_dir = require'lspconfig'.util.root_pattern("*.sln", ".git"),
-	enable_msbuild_load_projects_on_demand = true,
-}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
