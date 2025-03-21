@@ -57,18 +57,18 @@ require('mason-lspconfig').setup({
 				}
 			})
 		end,
-		omnisharp = function()
-			require('lspconfig').omnisharp.setup({
-				cmd = { "dotnet", "~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"},
-				root_dir = require'lspconfig'.util.root_pattern("*.sln", ".git"),
-				enable_msbuild_load_projects_on_demand = true,
-				settings = {
-					OmniSharp = {
-						UseGlobalMono = "never",
-					},
-				},
-			})
-		end,
+--		omnisharp = function()
+--			require('lspconfig').omnisharp.setup({
+--				cmd = { "OmniSharp"},
+--				root_dir = require'lspconfig'.util.root_pattern("*.sln", ".git"),
+--				enable_msbuild_load_projects_on_demand = true,
+--				--settings = {
+--				--		OmniSharp = {
+--				--		UseGlobalMono = "never",
+--				--	},
+--				--},
+--			})
+--		end,
 	}
 })
 
