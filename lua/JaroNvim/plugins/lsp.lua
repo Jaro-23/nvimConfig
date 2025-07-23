@@ -1,8 +1,8 @@
 return {
-	"neovim/nvim-lspconfig",
+	"williamboman/mason-lspconfig.nvim", -- Mason + LSP config integration
 	dependencies = {
 		"williamboman/mason.nvim", -- Mason itself
-		"williamboman/mason-lspconfig.nvim", -- Mason + LSP config integration
+		"neovim/nvim-lspconfig",
 	},
 	opts = {
 		on_attach = function(_, bufnr)
@@ -30,8 +30,8 @@ return {
 				"rust_analyzer", -- Rust
 				"clangd", -- C/C++
 				"jdtls", -- Java
-				"r_language_server", -- R
 				"lua_ls", -- Lua
+				"eslint",
 			},
 		})
 	end,
