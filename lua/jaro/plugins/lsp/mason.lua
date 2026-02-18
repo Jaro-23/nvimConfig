@@ -4,6 +4,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
+
 	config = function()
 		-- import mason
 		local mason = require("mason")
@@ -15,6 +16,10 @@ return {
 
 		-- enable mason and configure icons
 		mason.setup({
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -33,6 +38,7 @@ return {
 				"pyright",
 				"clangd",
 				"jdtls",
+				"ts_ls",
 			},
 		})
 
