@@ -23,6 +23,6 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- Quickfix
-vim.api.nvim_set_keymap("n", "<leader>qb", ":make<CR>:copen<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>qo", ":copen<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>qc", ":cclose<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>qb", ":silent make<CR>:copen<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>qo", ":copen<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>qc", ":cclose<CR>", {})
