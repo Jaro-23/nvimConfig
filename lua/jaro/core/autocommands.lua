@@ -6,7 +6,7 @@ local function set_makeprg()
 
 	if cmake_root then
 		local root_dir = vim.fs.dirname(cmake_root)
-		vim.opt_local.makeprg = "cmake --build " .. root_dir .. "/build "
+		vim.opt_local.makeprg = "cmake -S . -B " .. root_dir .. "/build && cmake --build " .. root_dir .. "/build "
 		vim.opt_local.errorformat = "%E%f:%l:%c: error: %m,"
 			.. "%E%f:%l: error: %m,"
 			.. "%E%f:%l:%c: fatal error: %m,"
