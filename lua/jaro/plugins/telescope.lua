@@ -23,6 +23,9 @@ return {
 				file_ignore_patterns = {
 					"Libraries",
 					"node_modules",
+					"%.meta",
+					"%.png",
+					"%.bin",
 				},
 			},
 		})
