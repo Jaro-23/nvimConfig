@@ -39,6 +39,7 @@ return {
 				"clangd",
 				"jdtls",
 				"ts_ls",
+				"arduino_language_server",
 			},
 		})
 
